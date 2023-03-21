@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MainCollectionViewCell" customModule="PokeApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="178" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="178" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ss1-MQ-DXb">
+                        <rect key="frame" x="0.0" y="0.0" width="178" height="160"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-t8-hkm" userLabel="pokeImage">
+                                <rect key="frame" x="29" y="8" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Ijx-oP-Ri2"/>
+                                    <constraint firstAttribute="height" constant="120" id="VLX-ps-efI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-ak-uru" userLabel="pokeName">
+                                <rect key="frame" x="65.333333333333329" y="128" width="47.666666666666671" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="K9z-7J-UT9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="LIy-ak-uru" firstAttribute="top" secondItem="O0P-t8-hkm" secondAttribute="bottom" id="5Rj-Iu-7EK"/>
+                            <constraint firstItem="O0P-t8-hkm" firstAttribute="centerX" secondItem="Ss1-MQ-DXb" secondAttribute="centerX" id="bAM-cz-xfu"/>
+                            <constraint firstItem="LIy-ak-uru" firstAttribute="centerX" secondItem="Ss1-MQ-DXb" secondAttribute="centerX" id="wiV-3p-dmR"/>
+                            <constraint firstItem="O0P-t8-hkm" firstAttribute="top" secondItem="Ss1-MQ-DXb" secondAttribute="top" constant="8" id="xiR-0Y-vCO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ss1-MQ-DXb" secondAttribute="bottom" id="1yL-pO-WUx"/>
+                <constraint firstItem="Ss1-MQ-DXb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Jjv-Pc-Qnt"/>
+                <constraint firstAttribute="trailing" secondItem="Ss1-MQ-DXb" secondAttribute="trailing" id="NhV-g1-Zsj"/>
+                <constraint firstItem="Ss1-MQ-DXb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lma-jB-s41"/>
+            </constraints>
+            <size key="customSize" width="99" height="118"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="pokeImage" destination="O0P-t8-hkm" id="DKB-mr-5ul"/>
+                <outlet property="pokeName" destination="LIy-ak-uru" id="2YE-QF-LqK"/>
+            </connections>
+            <point key="canvasLocation" x="101.5267175572519" y="43.661971830985919"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
