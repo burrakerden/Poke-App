@@ -7,9 +7,21 @@
 
 import Alamofire
 
+//MARK: - Protocols
+
 protocol ServiceProtocol {
     func getPokeName(onSuccess: @escaping (PokeName?) -> Void, onError: @escaping (AFError) -> Void)
 }
+
+protocol DetailServiceProtocol {
+    func getPokeDetail(url: String, onSuccess: @escaping (PokeDetail?) -> Void, onError: @escaping (AFError) -> Void)
+}
+
+protocol PaginationServiceProtocol {
+    func getPokePagination(paginationUrl: String, onSuccess: @escaping (PokeName?) -> Void, onError: @escaping (AFError) -> Void)
+}
+
+//MARK: - Service Class
 
 final class Service: ServiceProtocol {
     func getPokeName(onSuccess: @escaping (PokeName?) -> Void, onError: @escaping (Alamofire.AFError) -> Void) {
@@ -21,11 +33,6 @@ final class Service: ServiceProtocol {
     }
 }
 
-//MARK: - Detail
-
-protocol DetailServiceProtocol {
-    func getPokeDetail(url: String, onSuccess: @escaping (PokeDetail?) -> Void, onError: @escaping (AFError) -> Void)
-}
 
 final class DetailService: DetailServiceProtocol {
     func getPokeDetail(url: String, onSuccess: @escaping (PokeDetail?) -> Void, onError: @escaping (Alamofire.AFError) -> Void) {
@@ -37,11 +44,6 @@ final class DetailService: DetailServiceProtocol {
     }
 }
 
-//MARK: - Pagination
-
-protocol PaginationServiceProtocol {
-    func getPokePagination(paginationUrl: String, onSuccess: @escaping (PokeName?) -> Void, onError: @escaping (AFError) -> Void)
-}
 
 final class PaginationService: PaginationServiceProtocol {
     func getPokePagination(paginationUrl: String, onSuccess: @escaping (PokeName?) -> Void, onError: @escaping (Alamofire.AFError) -> Void) {

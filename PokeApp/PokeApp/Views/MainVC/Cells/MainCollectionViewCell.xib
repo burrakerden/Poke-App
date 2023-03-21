@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,28 +20,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="178" height="160"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-t8-hkm" userLabel="pokeImage">
-                                <rect key="frame" x="29" y="8" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="Ijx-oP-Ri2"/>
-                                    <constraint firstAttribute="height" constant="120" id="VLX-ps-efI"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="0.0" width="146" height="136"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-ak-uru" userLabel="pokeName">
-                                <rect key="frame" x="65.333333333333329" y="128" width="47.666666666666671" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-ak-uru" userLabel="pokeName">
+                                <rect key="frame" x="0.0" y="132" width="178" height="28"/>
+                                <color key="backgroundColor" red="1" green="0.094117647058823528" blue="0.094117647058823528" alpha="0.7053756208609272" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="K9z-7J-UT9"/>
+                                    <constraint firstAttribute="height" constant="28" id="K9z-7J-UT9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="backgroundColor" red="0.99607843159999998" green="0.98039215800000001" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="LIy-ak-uru" firstAttribute="top" secondItem="O0P-t8-hkm" secondAttribute="bottom" id="5Rj-Iu-7EK"/>
-                            <constraint firstItem="O0P-t8-hkm" firstAttribute="centerX" secondItem="Ss1-MQ-DXb" secondAttribute="centerX" id="bAM-cz-xfu"/>
-                            <constraint firstItem="LIy-ak-uru" firstAttribute="centerX" secondItem="Ss1-MQ-DXb" secondAttribute="centerX" id="wiV-3p-dmR"/>
-                            <constraint firstItem="O0P-t8-hkm" firstAttribute="top" secondItem="Ss1-MQ-DXb" secondAttribute="top" constant="8" id="xiR-0Y-vCO"/>
+                            <constraint firstAttribute="bottom" secondItem="LIy-ak-uru" secondAttribute="bottom" id="7e9-nG-zao"/>
+                            <constraint firstItem="O0P-t8-hkm" firstAttribute="leading" secondItem="Ss1-MQ-DXb" secondAttribute="leading" constant="16" id="FdF-ld-DOT"/>
+                            <constraint firstAttribute="trailing" secondItem="O0P-t8-hkm" secondAttribute="trailing" constant="16" id="OHt-f8-6qJ"/>
+                            <constraint firstItem="LIy-ak-uru" firstAttribute="leading" secondItem="Ss1-MQ-DXb" secondAttribute="leading" id="WKS-vc-sdm"/>
+                            <constraint firstAttribute="trailing" secondItem="LIy-ak-uru" secondAttribute="trailing" id="bCb-aY-L7n"/>
+                            <constraint firstItem="O0P-t8-hkm" firstAttribute="top" secondItem="Ss1-MQ-DXb" secondAttribute="top" id="rO7-Ps-d0p"/>
+                            <constraint firstAttribute="bottom" secondItem="O0P-t8-hkm" secondAttribute="bottom" constant="24" id="w0C-bA-7Lp"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -64,12 +63,7 @@
                 <outlet property="pokeImage" destination="O0P-t8-hkm" id="DKB-mr-5ul"/>
                 <outlet property="pokeName" destination="LIy-ak-uru" id="2YE-QF-LqK"/>
             </connections>
-            <point key="canvasLocation" x="101.5267175572519" y="43.661971830985919"/>
+            <point key="canvasLocation" x="100.76335877862596" y="43.661971830985919"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

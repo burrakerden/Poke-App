@@ -16,9 +16,11 @@ struct PokeDetail: Codable {
     let baseExperience: Int
     let sprite: Sprites
     let abilities: [Ability]
+    let types: [TypeElement]?
+    let stats: [Stat]?
     
     private enum CodingKeys: String, CodingKey {
-        case id, name, weight, height, abilities
+        case id, name, weight, height, abilities, types, stats
         case baseExperience = "base_experience"
         case sprite = "sprites"
     }
@@ -97,5 +99,22 @@ struct DreamWorld: Codable {
 
     enum CodingKeys: String, CodingKey {
         case frontDefault = "front_default"
+    }
+}
+
+// MARK: - TypeElement
+struct TypeElement: Codable {
+    let slot: Int?
+    let type: Species?
+}
+
+// MARK: - Stat
+struct Stat: Codable {
+    let baseStat, effort: Int?
+    let stat: Species?
+
+    enum CodingKeys: String, CodingKey {
+        case baseStat = "base_stat"
+        case effort, stat
     }
 }

@@ -9,8 +9,12 @@ import Foundation
 
 class ViewModel {
     
+    //MARK: - Properties
+
     var pokeNamesData: (([Result]?) -> Void)?
     var pokePaginationUrl: ((String) -> Void)?
+    
+    //MARK: - Functions
     
     func getPokeData() {
         Service().getPokeName(){ result in

@@ -9,8 +9,12 @@ import Foundation
 
 class DetailViewModel {
     
+    //MARK: - Properties
+
     var pokeDetailData: ((PokeDetail) -> Void)?
     
+    //MARK: - Functions
+
     func getPokeDetail(url: String) {
         DetailService().getPokeDetail(url: url){ result in
             guard let data = result else {return}
