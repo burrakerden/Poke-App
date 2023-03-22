@@ -11,7 +11,6 @@ import Foundation
 // MARK: - PokeName
 struct PokeName: Codable {
     let count: Int?
-    let next: String?
     let results: [Result]?
 }
 

@@ -20,7 +20,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     let model = DetailViewModel()
     var pokeData: PokeDetail?
-
     var delegate: GestureProtocol?
 
     //MARK: - IBOutlets
@@ -33,7 +32,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         doubleTapGesture()
-        // Initialization code
     }
     
     //MARK: - Config
@@ -60,7 +58,6 @@ class MainCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
-
         isSelected = !isSelected
     }
     

@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     //MARK: - Properties
     
     var model = ViewModel()
-    var paginationUrl: String?
     var pokeUrls = [String]()
     
     //MARK: - IBOutlets
@@ -27,6 +26,7 @@ class MainViewController: UIViewController {
         setupUI()
         bindPokeName()
     }
+    
     //MARK: - Config
     
     func setupUI() {
@@ -60,6 +60,7 @@ class MainViewController: UIViewController {
         }
     }
 }
+
 //MARK: - CollectionView Delegate and DataSource
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -69,7 +70,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: MainCollectionViewCell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as? MainCollectionViewCell else {return UICollectionViewCell()}
-            cell.cellConfig(url: pokeUrls[indexPath.row])
+        cell.cellConfig(url: pokeUrls[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -78,34 +79,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let vc = DetailViewController()
         vc.pokeDetailUrl = self.pokeUrls[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == pokeUrls.count - 1 {
-            model.getNextPageUrl()
-            model.pokePaginationUrl = {[weak self] value in
-                guard let self = self else {return}
-                    self.paginationUrl = value
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                if let url = self.paginationUrl {
-                    self.model.getNextPageData(url: url)
-                    self.model.pokeNamesData = {[weak self] value in
-                        guard let self = self else {return}
-                        if let value = value {
-                            DispatchQueue.main.async {
-                                for i in 0...value.count - 1 {
-                                    if let url = value[i].url {
-                                        self.pokeUrls.append(url)
-                                    }
-                                }
-                                self.mainCollectionView.reloadData()
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
     
 }

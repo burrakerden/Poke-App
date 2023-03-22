@@ -12,8 +12,7 @@ class ViewModel {
     //MARK: - Properties
 
     var pokeNamesData: (([Result]?) -> Void)?
-    var pokePaginationUrl: ((String) -> Void)?
-    
+
     //MARK: - Functions
     
     func getPokeData() {
@@ -24,26 +23,4 @@ class ViewModel {
             print("ERROR: ", error.localizedDescription)
         }
     }
-    
-    func getNextPageUrl() {
-        Service().getPokeName(){ result in
-            guard let paginationUrl = result?.next else {return}
-            self.pokePaginationUrl?(paginationUrl)
-        } onError: { error in
-            print("ERROR: ", error.localizedDescription)
-        }
-    }
-    
-    func getNextPageData(url: String) {
-        PaginationService().getPokePagination(paginationUrl: url){ result in
-            guard let data = result?.results else {return}
-            guard let nextPageUrl = result?.next else {return}
-            self.pokeNamesData?(data)
-            self.pokePaginationUrl?(nextPageUrl)
-        } onError: { error in
-            print("ERROR: ", error.localizedDescription)
-        }
-    }
-    
-    
 }
