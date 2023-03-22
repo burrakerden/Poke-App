@@ -23,5 +23,3 @@ extension ServiceManager {
         }
     }
 }
-
-//MARK: - <# Section #>
